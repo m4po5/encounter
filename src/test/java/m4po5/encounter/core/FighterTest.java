@@ -113,7 +113,7 @@ class FighterTest {
 		
 		warrior.setDextirity(mydex);
 		warrior.setHitPoints(hitPoints);
-		fighter.dodge(dmg, dex);
+		fighter.attemptDodge(dmg, dex);
 		
 		assertEquals(warrior.getHitPoints(), hitPoints);		
 	}
@@ -128,7 +128,7 @@ class FighterTest {
 		
 		warrior.setDextirity(mydex);
 		warrior.setHitPoints(hitPoints);
-		fighter.dodge(dmg, dex);
+		fighter.attemptDodge(dmg, dex);
 		
 		assertEquals(warrior.getHitPoints(), hitPoints - dmg);	
 	}

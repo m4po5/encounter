@@ -18,14 +18,17 @@ public class Main {
 		Fighter fighter = new Fighter(en);
 
 		int dmg = 50;
-		int dex = 6;
+		int dex = 8;
 		
 		while(fighter.isAlive()) {
+			wait(3.0);
+			
 			int hp = en.getHitPoints();
-			System.out.println("The " + en.getEncounterClass() + " has " + hp + " hitpoints left.\nYou strike at the vile creatue,");
+			System.out.println("\nThe " + en.getEncounterClass() + " has " + hp + " hitpoints left.\nYou strike at the vile creatue,");
+
+			wait(2.0);
 			
-			fighter.dodge(dmg, dex);
-			
+			fighter.attemptDodge(dmg, dex);
 			
 			if (hp == en.getHitPoints())
 				System.out.println("but " + en.getName() + " has dodged your attack!");
@@ -34,7 +37,17 @@ public class Main {
 			
 		}
 		
-		System.out.println("Hussah! You defeated a harmless creature in battle!");
+		wait(1.0);
 		
+		System.out.println("\nHussah! You defeated a harmless creature in battle!");
+	}
+	
+	private static void wait(double seconds) {
+
+		try {
+			Thread.sleep((long)seconds * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

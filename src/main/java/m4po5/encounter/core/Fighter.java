@@ -28,7 +28,7 @@ public class Fighter{
 		}
 	}
 	
-	public void dodge(int damagePoints, int dex) {
+	public void attemptDodge(int damagePoints, int dex) {
 		double myDex = encounter.getDextirity();
 		double baseDodge = 0.5;
 		double mod = 0.0;
